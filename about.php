@@ -1,0 +1,594 @@
+
+<?php
+include('config.php');
+      if(isset($_POST['submit'])){
+	  $name = mysqli_real_escape_string($connection,$_POST['name']);
+	  $mobile = mysqli_real_escape_string($connection,$_POST['mobile']);
+	  $email = mysqli_real_escape_string($connection,$_POST['email']);
+	  $message = mysqli_real_escape_string($connection,$_POST['message']);
+
+	 $sql = "INSERT INTO portfolio(name,mobile,email,message) VALUES('$name','$mobile','$email','$message')";
+
+	 	if(mysqli_query($connection, $sql)){
+	 		header("Location : about.php");
+	 	}else{
+	 			echo 'err'.mysqli_error($connection);
+
+	 	}
+	 }
+
+
+
+
+
+
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+		      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		      <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+		              <script src="jquery-3.5.1.js"></script> 
+
+
+<style type="text/css">
+	html{
+		scroll-behavior: smooth;
+	}
+	.en{
+		padding-top: 5px;
+		margin-top:5px;
+	}
+	body{
+		background: black;
+
+	}
+	nav{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+
+	.first{
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	.bnn{
+		margin-top: 5px;
+		padding-bottom: 30px;
+	}
+
+	#bn{
+				border-radius: 10px;
+
+	}
+
+	.nn{
+		margin-right: 2px;
+		margin-left: 2px;
+		margin-bottom: 9.5%;
+	}
+	.es{
+		border-radius: 1px;
+	}
+	/*img{
+		height:500px;
+		width:500px;
+		padding-right: 20px;
+	}*/
+	.submit{
+		padding-top: 10px;
+		padding-right: 20px;
+		padding-left: 20px;
+		padding-bottom: 10px;
+	}
+	.ceno{
+		display: inline-block;
+		line-height: 18px;
+		font-weight: 400px;
+		letter-spacing: 1px;
+	}
+	.sisi{
+		font-family: "Sofia", sans-serif;
+	}
+
+	header{
+		background-image: url('kemi01.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 50vh;
+
+	}
+	.iyi{
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.5));
+		min-height: 100vh;
+	}
+	.bibi{
+		font-size: 0.99rem;
+	}
+	/*.div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+}*/
+
+</style>
+</head>
+<body>
+	<header>
+		<!--<div class="navbar-fixed">-->
+			<nav class="navbar-wrapper transparent">
+				<div class="container">
+				<a href='' class='brand-logo'>AWOMOLO ADEKEMI</a>
+			<a href='#'></a>
+			<!--	<a href="#" class="brand-logo"><img src="empty.png"></a>-->
+			<ul class='right hide-on-med-and-down'>
+				<li><a href="about.html">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+<br>
+		
+			</div>
+		</div>
+	</nav>
+
+	</header>
+	
+	
+
+
+	<br>
+	
+
+	<section class="myself" id='about'>
+		<div class="container">
+			<div class="row">
+				<br>
+				<br>
+				<div class="col l6 m12 s12 left-align">
+					<br>
+					<br>
+					<br>
+				<!--<img src="kemi4.jpg" class="es">-->
+				    <img class="materialboxed" width="450" height='350' src="kemi1.jpg">
+
+			</div>
+				<div class="col l6 m12 s12 center white-text">
+						<br><br>
+<h4 class='white-text sisi left-align'>I am a Software Developer.</h4> 
+     <div class='center text-right ceno'><p class='left-align'>I am Adekemi Awomolo.,<!--I am a mass communicator, a banker, a writer and a vocalist.-->
+ <!--Most people wonder how i can be many things at once!!! I wonder myself too,on how i can be many things at once. Most especially ,how i can cut across various fields and i laugh out really hard. I strongly agree that learning a little about everything and perfecting skills in them is a wonderful thing.-->I am a realistic and a dreamer, in that i love to dream about things, visualize about them and try to bring them to life.I am a getter.My love for Tech, is one of the reasons why i developed so much interest in web development <!-- and the reason i enrolled for this programme.-->I see various works online, and i am inspired to surf and research.When the opprotunity came for me to learn further with the opportunity given by Pearls Africa and the US Consulate, i was super excited, it was a prayer answered. Taking this opportunity to broaden my knowledge and expand my skills with confidence, i am ready and open to take on internships and jobs to perfect my mastery of this unique skill.</p>
+ <div class='left-align'>
+ 	<br>
+ 	<a  href='https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsdGCGCTHfrlmVbqwDxKSCDXDbKrqtsHVNVDKwksRtfJfMsbBTMnChDFWczjgBGgNXZRjKqL' class='btn white green-text' id='sues'>Hire Me</a>
+<a class='btn white green-text' id='sue'>Download My Cv</a>
+
+</div>
+
+</div>
+
+
+				</div>
+
+			</div>
+		</div>
+<br>
+<br>
+<br>
+	</section>
+<!--<section class="parallax">
+	<div class="parallax-container">
+		<div class='parallax'>
+			<img src='kemi01.jpg'>
+		</div>
+
+</section>-->
+	
+<div class='div'></div>
+
+
+<!--<section id="services black white-text">
+	<div class='container'>
+		<h4 class='center white-text sisi'>Services</h4>
+		<br>
+		<div class='row'>
+			<div class='col s12 m6 l4'>
+				<div class='card'>
+					<div class='card-content'>
+						<h6 class='center'>Responsive Web Designs.</h6>
+					</div>
+				</div>
+				
+			</div>
+			<div class='col s12 m6 l4'>
+				<div class='card'>
+					<div class='card-content'>
+
+						<h6 class='center'>Front End Development.</h6>
+					
+					</div>
+				</div>
+				
+			</div>
+			<div class='col s12 m12 l4'>
+				<div class='card'>
+					<div class='card-content'>
+						<h6 class='center'>Backend Development.</h6>
+					</div>
+				</div>
+				
+			</div>
+
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</section>-->
+
+<div class="parallax-container">
+			<div class='parallax'>
+			<img src='kemi01.jpg' class='iyi'>
+
+		</div>
+		<div class='container'>
+			<br>
+			
+		
+			<div class='row'>
+				<br><br>
+				<div class='col s6 m6 l4'>
+					<h4 class='sisi'>Academics</h4>
+					<ul>
+						<li>ODUDUWA UNIVERSITY.</li>
+						<li>Mass Communication.</li>
+					</ul>
+				</div>
+				<div class='col s6 m6 l4'>
+					<h4 class='sisi'>Work Experience</h4>
+					<ul>
+						<li>Web Developer</li>
+					</ul>
+				</div>
+				<div class='col s6 m6 l4 '>
+					<h4 class='sisi'>Skills</h4>
+					<ul class='bibi white-text'>
+						<li>HTML</li>
+						<div class="w3-border">
+  <div class="w3-grey" style="height:24px;width:100%"></div>
+</div>
+						<li>CSS</li>
+						<div class="w3-border">
+  <div class="w3-grey" style="height:24px;width:90%"></div>
+</div>
+						
+						<li>CSS3</li>
+						<br>
+						<li>BOOTSTRAP</li>
+						<br>
+						<li>MATERIALIZE</li>
+						<br>
+						<li>JAVASCRIPT</li>
+						<br>
+						<li>JQUERY</li>
+						<br>
+						<li>PHP</li>
+
+
+
+
+
+
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+
+<section id='portfolio' class=''>
+	<!--<div class="parallax-container">
+			<div class='parallax'>
+			<img src='kemi09.jpg' class='iyi'>
+
+		</div>
+	</div>-->
+	<div class='container'>
+		<h4 class='center sisi white-text'>Porfolio</h4>
+		<div class='row'>
+			<div class='col s12 m12 l4'>
+				<div class='card black white-text'>
+					<div class='card-image'>
+						<img src='ook.jpg' class='responsive-img'>
+					</div>
+					<div class='card-content center'>
+						<h5 class="center ">Api Mini Photobook Project</h5>
+						<br>
+					  <a class='btn black-text white' href="https://apiphotobook.netlify.app/">View</a>
+
+					</div>
+					<!--<div class='card-action'>
+					</div>-->
+				</div>
+				
+			</div>
+			<div class='col s12 m12 l4'>
+				<div class='card black white-text'>
+					<div class='card-image'>
+						<img src='i2.jpg' class='responsive-img'>
+
+					</div>
+					<div class='card-content center'>
+						<h5 class="center "> Api Weather Forecast Project</h5>
+						<br>
+						<a class='btn white black-text' href="https://appp-weather.adekemiawomolo.repl.co/">View</a>
+
+
+					</div>
+					<!--<div class='card-action'>-->
+						<!--<a class='btn' href="https://apiphotobook.netlify.app/">View</a>-->
+					<!--</div>-->
+				</div>
+			</div>
+			<div class='col s12 m12 l4'>
+				<div class='card black white-text'>
+					<div class='card-image'>
+					<img src='i3.jpg' class='responsive-img'>
+
+					</div>
+					<div class='card-content center'>
+						<h5 class="center ">The Great RGBA Color App</h5>
+						<br>
+						<a class='btn white black-text' href="https://github.com/kemysola/Color-Game.git">View</a>
+					</div>
+					<!--<div class='card-action'>
+					</div>-->
+				</div>
+			</div>
+
+
+		</div>
+		<div class='row'>
+			<div class='col s12 m12 l4'>
+				<div class='card black white-text'>
+					<div class='card-image'>
+					<img src='i4.jpg' class='responsive-img'>
+
+					</div>
+					<div class='card-content center'>
+						<h5 class="center ">Lucky Random Letter App.</h5>
+					  <a class='btn white black-text' href="">View</a>
+
+					</div>
+					<!--<div class='card-action'>
+					</div>-->
+				</div>
+				
+			</div>
+			<div class='col s12 m12 l4'>
+				<div class='card black white-text'>
+					<div class='card-image'>
+												<img src='i8.jpg' class='responsive-img'>
+
+					</div>
+					<div class='card-content center'>
+						<h5 class="center ">Random Quote Generator App.</h5>
+						<a class='btn white black-text' href="">View</a>
+
+
+					</div>
+					<!--<div class='card-action'>-->
+						<!--<a class='btn' href="https://apiphotobook.netlify.app/">View</a>-->
+					<!--</div>-->
+				</div>
+			</div>
+			<div class='col s12 m12 l4'>
+				<div class='card black white-text'>
+					<div class='card-image'>
+												<img src='i9.jpg' class='responsive-img'>
+
+					</div>
+					<div class='card-content center'>
+						<h5 class="center ">Front End Web Design</h5>
+						<br>
+						<a class='btn white black-text' href="">View</a>
+					</div>
+					<!--<div class='card-action'>
+					</div>-->
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+</section>
+<!--<div class="parallax-container">
+			<div class='parallax'>
+			<img src='kemi01.jpg' class='iyi'>
+
+		</div>
+	</div>
+
+
+<section id="services black white-text">
+	<div class='container'>
+		<h4 class='center white-text sisi'>Services</h4>
+		<br>
+		<div class='row'>
+			<div class='col s12 m6 l4'>
+				<div class='card'>
+					<div class='card-content'>
+						<h6 class='center'>Responsive Web Designs.</h6>
+						<a class='btn white' href="">View</a>
+					</div>
+				</div>
+				
+			</div>
+			<div class='col s12 m6 l4'>
+				<div class='card'>
+					<div class='card-content'>
+
+						<h6 class='center'>Front End Development.</h6>
+					
+					</div>
+				</div>
+				
+			</div>
+			<div class='col s12 m12 l4'>
+				<div class='card'>
+					<div class='card-content'>
+						<h6 class='center'>Backend Development.</h6>
+					</div>
+				</div>
+				
+			</div>
+
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</section>-->
+
+
+
+
+<section id='contact' class=''>
+	<div class="parallax-container">
+			<div class='parallax'>
+			<img src='kemi01.jpg'>
+
+		</div>
+		
+		<!--</div>-->
+
+	
+	<div class='container'>
+	<h4 class='center white-text sisi'>Get In Touch</h4>
+	<h5 class='black-text center'><b>__<span class='white-text'>___</span>__</b></h5>
+	<div class='container'>
+	<div class="row">
+    <form class="col s12" action='about.php' method="POST">
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="name" type="text" placeholder="Name *" name='name' class="validate white-text" required>
+          <!--<label for="first_name">First Name</label>-->
+        </div>
+        <div class="input-field col s6">
+          <input id="mobile" placeholder='Mobile *' type="text" name='mobile' class="validate white-text" required="">
+         <!-- <label for="last_name">Last Name</label>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" placeholder="Email *" name= 'email' class="validate white-text">
+          <!--<label for="first_name">First Name</label>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="message" type="text"  placeholder='Message *'  name='message' class="validate white-text">
+         <!-- <label for="disabled">Disabled</label>-->
+        </div>
+    </div>
+        <div class=''>
+        <input type='submit' id='submit' value="Send Message" name='submit' class='black-text submit'>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="page-footer black container ">
+	<div class='container'>
+		<div class='container'>
+		<div class='footer-copyright container '>
+			
+			(c)ADEKEMI AWOMOLO
+	
+		</div>
+	</div>
+</div>
+</footer>
+
+
+
+
+<script>
+	$(document).ready(function(){
+		$('.parallax').parallax();
+		$('.materialboxed').materialbox();
+		$('.slider').slider();
+		
+	})
+</script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
